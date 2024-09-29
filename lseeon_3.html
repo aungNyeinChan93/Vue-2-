@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>V-model</title>
+    <style>
+        .red-color{
+            color: red;
+        }
+        .green-color{
+            color:green
+        }
+        .delete{
+            text-decoration: line-through;
+        }
+        .underline{
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <input type="text" v-model="placeholder">
+        <h3 v-bind:class="[red,underline]">{{name}}</h3>
+        <h3 :class="[green,del]">{{placeholder}}</h3>
+        <a :href="youtubeUrl" target="_blank">Youtube</a>
+        <img :src="src" alt="">
+        <input type="password" name="" :disabled="status">
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.js"></script>
+
+<script>
+    let container = new Vue({
+        el:"#container",
+        data:{
+            name:"this is app's name",
+            placeholder:"Enter your name",
+            red:"red-color",
+            green :"green-color",
+            del:"delete",
+            underline:"underline",
+            youtubeUrl :"https://youtube.com",
+            src: "https://yt3.ggpht.com/ytc/AIdro_mk2xwCvmFnEVHLNzaTcpn-NrFdWlECe43vbF6rnGkD9A=s88-c-k-c0x00ffffff-no-rj",
+            status:true
+        }
+    });
+</script>
+</html>

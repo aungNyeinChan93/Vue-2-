@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Computed_property</title>
+  </head>
+  <body>
+
+        <div id="app">
+
+        <h1>{{name}}</h1>
+
+        <h4>NameLength: {{getLength}}</h4>
+
+        <button @click="length">click</button><br /><br />
+
+        {{getName}}
+
+        <button @click="callSetName">call set name</button>
+        <br>
+            {{reverse}}
+            <br>
+            <!-- <button @click="now">Date</button> -->
+             {{nowgi}}
+        </div>
+
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.js"></script>
+
+  <script>
+    let app = new Vue({
+      el: "#app",
+      data: {
+        name: "Computed Property",
+      },
+      computed: {
+        getLength() {
+          return this.name.length;
+        },
+        getName() {
+          return `This instance name is  ${this.name}`;
+        },
+        setName() {
+          return (this.name = "change name");
+        },
+        reverse(){
+            return this.name.split("").reverse().join("")
+        },
+        now:function(){
+            return Date.now();
+        }
+      },
+      methods: {
+        length() {
+          alert(this.name.length);
+        },
+        callSetName() {
+          this.setName();
+        },
+        show() {
+          return this.name.lenght;
+        },
+      },
+    });
+  </script>
+</html>

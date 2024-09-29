@@ -1,0 +1,52 @@
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.5.4/vue.cjs.js"></script> -->
+<!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> -->
+<!-- <script src="https://unpkg.com/vue/dist/vue.js"></script> -->
+
+<!-- vue 2 -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.js"></script>
+
+<div id="title">{{name}}</div>
+<div id="test">{{array}}</div>
+<h1 id="h1">{{hw}}</h1>
+<div class="container">
+  <h1>{{title}}</h1>
+  <p>{{body}}</p>
+</div>
+
+<script>
+  new Vue({
+    el: "#title",
+    data: function () {
+      return {
+        name: "vue",
+      };
+    },
+  });
+
+  new Vue({
+    el: "#test",
+    data: function () {
+      return {
+        array: ["aung", "nyein", "chan"],
+      };
+    },
+  });
+
+  let h1 = new Vue({
+    el: "#h1",
+    data: {
+      hw: "hello world test",
+    },
+  });
+
+  let container = new Vue({
+    el: ".container",
+    data: function () {
+      return {
+        title: "this is title",
+        body: "lorem dfadsfasdf;asd;fasdfasdfasdfadfa",
+      };
+    },
+  });
+  
+</script>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conditional rendering</title>
+    <style>
+      .red {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+
+      <h1>{{name}}</h1>
+      <div>
+        <p v-if="status != true">Hello Vue 2</p>
+        <p v-else>I am true</p>
+      </div>
+      <input type="text" name="" v-model="placeholder" :class="red" />
+
+      <div class="number">
+        <h1 v-if="number=='one'">One</h1>
+        <h1 v-else-if="number=='two'">Two</h1>
+        <h1 v-else-if="number=='three'">Three</h1>
+        <h1 v-else>nothing</h1>
+      </div>
+
+      <img src="https://yt3.ggpht.com/ytc/AIdro_mk2xwCvmFnEVHLNzaTcpn-NrFdWlECe43vbF6rnGkD9A=s88-c-k-c0x00ffffff-no-rj" alt="" v-show="status">
+      <img src="https://yt3.ggpht.com/ytc/AIdro_mk2xwCvmFnEVHLNzaTcpn-NrFdWlECe43vbF6rnGkD9A=s88-c-k-c0x00ffffff-no-rj" alt="" v-if="status">
+
+    </div>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.js"></script>
+  <script>
+    let app = new Vue({
+      el: "#app",
+      data: {
+        name: "Conditional Rendering",
+        status: false,
+        placeholder: "something",
+        red: "red",
+        number:"one"
+      },
+    });
+  </script>
+</html>

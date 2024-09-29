@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 2</title>
+</head>
+<body>
+    
+    <div id="app">
+        
+        {{name}}
+
+        {{1>10}}
+
+        <div>
+           {{ typeof obj}}
+        </div>
+
+        {{status? "this is true":"false"}}
+
+        {{obj.age +10}}
+
+        {{array.map((item)=>item +"a")}}
+
+        {{array[1]= "test"}}
+
+        {{array}}
+
+        {{obj.name = "anc"}}
+
+        {{obj}}
+
+    </div>
+
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.js"></script>
+
+<script>
+    let app = new Vue({
+        el:"#app",
+        data:{
+            name:"this is App",
+            obj:{name:"aung",age:20},
+            status:false,
+            array:["a","b","c","d"]
+
+        }
+    });
+</script>
+
+</html>
